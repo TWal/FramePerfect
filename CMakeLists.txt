@@ -10,6 +10,11 @@ add_custom_target(mrproper
    COMMAND ${CMAKE_COMMAND} -P ${CMAKE_SOURCE_DIR}/CMakeModules/mrproper.cmake
 )
 
+add_custom_target(doc
+  COMMAND doxygen
+  COMMAND ln -fs doc/html/index.html index.html
+)
+
 find_package(SFML 2 COMPONENTS system window graphics REQUIRED)
 include_directories(${SFML_INCLUDE_DIR})
 list(APPEND LIBS ${SFML_LIBRARIES})
