@@ -1,4 +1,7 @@
 #include <SFML/Window.hpp>
+#include <iostream>
+
+using namespace std;
 
 int main() {
     sf::Window window(sf::VideoMode(800, 600), "My window");
@@ -11,6 +14,8 @@ int main() {
             }
         }
     }
+
+
 
     return 0;
 }
