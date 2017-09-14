@@ -3,7 +3,7 @@
 #include "Model/Model.h"
 #include "Controller.h"
 #include "Render/Renderer.h"
-#include "Render/Object.h"
+#include "Model/Object.h"
 
 
 using namespace std;
@@ -11,7 +11,9 @@ using namespace std;
 int main() {
     win.create(sf::VideoMode(800, 600), "My window");
 
-    model.objects.push_back(new Object);
+    Object obj;
+    model.objects.push_back(&obj);
+    controller.selectObject(&obj);
     while(win.isOpen()) {
         sf::Event event;
         while(win.pollEvent(event)) {

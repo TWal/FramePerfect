@@ -1,6 +1,6 @@
 #include "Renderer.h"
 #include "../Model/Model.h"
-#include "Object.h"
+#include "../Model/Object.h"
 Renderer renderer;
 sf::RenderWindow win;
 
