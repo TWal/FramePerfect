@@ -16,11 +16,10 @@
 class Controller{
     Object* _controlled = nullptr;
     bool _activeMode;
-    float simSpeed;
+    float _simSpeed;
 public:
     /**
        @brief Store game events and actions.
-
     */
     struct Event{
         enum Type{PAUSE,SIMSPEED,ZOOM,MAPMOVE,SHOOT};

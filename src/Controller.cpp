@@ -2,6 +2,7 @@
 #include <SFML/Window.hpp>
 #include "Controller.h"
 #include "utility.h"
+#include "Phy.h"
 
 Controller controller;
 
@@ -24,5 +25,8 @@ void Controller::handleEvent(Event& event){
 
 
 void Controller::step(){
-
+    if(_activeMode){
+        phy.step(_simSpeed);
+    }
+    
 }

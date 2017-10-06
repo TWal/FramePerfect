@@ -2,6 +2,7 @@
 #include <iostream>
 #include "Model/Model.h"
 #include "Controller.h"
+#include "Event/EventManager.h"
 #include "Render/Renderer.h"
 #include "Model/Object.h"
 
@@ -21,10 +22,10 @@ int main() {
                 win.close();
             }
             //else if(!gui.handleEvent(event));
-            else controller.handleEvent(event);
+            else eventManager.handleEvent(event);
         }
         win.clear(sf::Color::Black);
-        controller.run();
+        controller.step();
         renderer.render();
         // gui.draw();
         win.display();
