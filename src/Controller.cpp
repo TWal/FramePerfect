@@ -7,35 +7,22 @@ Controller controller;
 
 using namespace std;
 
-bool Controller::handleEvent(sf::Event& event){
-    cout << event << endl;
-    if(event.type == sf::Event::KeyPressed){
-        switch(event.key.code){
-            case sf::Keyboard::Z:
-                if(controlled){
-                    controlled->move(controlled->pos() - sf::Vector2f(0,1));
-                }
-                break;
-            case sf::Keyboard::Q:
-                if(controlled){
-                    controlled->move(controlled->pos() - sf::Vector2f(1,0));
-                }
-                break;
-            case sf::Keyboard::S:
-                if(controlled){
-                    controlled->move(controlled->pos() + sf::Vector2f(0,1));
-                }
-                break;
-            case sf::Keyboard::D:
-                if(controlled){
-                    controlled->move(controlled->pos() + sf::Vector2f(1,0));
-                }
-                break;
-        }
+
+std::ostream& operator<<(std::ostream& out, Controller::Event& event){
+    switch(event.type){
+        case Controller::Event::PAUSE: return out << "PAUSE";
+        default: return out << "Event::TODO";
     }
-    return true;
+}
+
+void Controller::handleEvent(Event& event){
+    cout << event << endl;
+    switch(event.type){
+        default: return;
+    }
 }
 
 
-void Controller::run(){
+void Controller::step(){
+
 }

@@ -1,5 +1,4 @@
 #pragma once
-#include <SFML/Window.hpp>
 
 #include "Model/Object.h"
 
@@ -15,12 +14,25 @@
 
  */
 class Controller{
-    Object* controlled = nullptr;
+    Object* _controlled = nullptr;
+    bool _activeMode;
+    float simSpeed;
 public:
-    bool handleEvent(sf::Event& event); ///< handle an event
-    void run(); ///< move to next frame.
+    /**
+       @brief Store game events and actions.
+
+    */
+    struct Event{
+        enum Type{PAUSE,SIMSPEED,ZOOM,MAPMOVE,SHOOT};
+        Type type;
+        double param;
+        double param2;
+        friend std::ostream& operator<<(std::ostream& out, Event& event);
+    };
+    void handleEvent(Event& event); ///< handle an Event
+    void step(); ///< move to next frame.
     void selectObject(Object* obj){
-        controlled = obj;
+        _controlled = obj;
     }
 };
 
