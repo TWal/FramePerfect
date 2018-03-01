@@ -1,11 +1,11 @@
 #include "Renderer.h"
 #include "../Model/Model.h"
 #include "../Model/Object.h"
-Renderer renderer;
-sf::RenderWindow win;
+#include "../Model/Level.h"
+#include "../Game.h"
 
 void Renderer::render(){
-    for(Object* obj : model.objects){
+    for(auto [id,obj] : Game::lvl.current()){
         obj->draw();
     }
 }

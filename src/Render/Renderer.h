@@ -1,10 +1,8 @@
 #pragma once
 
-#include <SFML/Graphics.hpp>
+#include "../utility.h"
+
 class Renderer{
 public:
-    void render();
+    static void render();
 };
-
-extern Renderer renderer;
-extern sf::RenderWindow win;

@@ -4,9 +4,7 @@
 
 class EventManager {
 public:
-    bool handleEvent(sf::Event& event);
+    static bool handleEvent(const sf::Event& event);
     enum Checked{UP,DOWN,LEFT,RIGHT};
-    bool active(Checked c);
+    static bool active(Checked c);
 };
-
-extern EventManager eventManager;

@@ -1,8 +1,6 @@
 #include "EventManager.h"
 
-EventManager eventManager;
 
-
-bool EventManager::handleEvent(sf::Event& event){
+bool EventManager::handleEvent(const sf::Event& event){
     return true;
 }

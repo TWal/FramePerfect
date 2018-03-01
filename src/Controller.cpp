@@ -28,5 +28,4 @@ void Controller::step(){
     if(_activeMode){
         phy.step(_simSpeed);
     }
-    
 }
