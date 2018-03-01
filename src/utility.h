@@ -4,6 +4,9 @@
 #include <ostream>
 #include <SFML/Window.hpp>
 #include <SFML/Graphics.hpp>
+#include <nlohmann/json.hpp>
+
+using json = nlohmann::json;
 
 using u8 = uint8_t;
 using i8 = int8_t;
@@ -19,3 +22,5 @@ using real = float;
 std::ostream& operator<<(std::ostream& out, const sf::Event& event);
 using Vector2r = sf::Vector2<real>;
 using RealRect = sf::Rect<real>;
+
+bool jsonToVector2u(const json& j, sf::Vector2u& out);

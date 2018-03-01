@@ -36,3 +36,16 @@ std::ostream& operator<<(std::ostream& out, const sf::Event& event){
     }
     out << event;
 }
+
+bool jsonToVector2u(const json& j, sf::Vector2u& out) {
+    if(!j.is_array()) return false;
+    if(j.size() != 2) return false;
+    for(size_t i = 0; i < 2; ++i) {
+        if(!j[i].is_number_unsigned()) return false;
+    }
+
+    out.x = j[0];
+    out.y = j[1];
+
+    return true;
+}

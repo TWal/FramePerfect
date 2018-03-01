@@ -15,6 +15,8 @@ add_custom_target(doc
   COMMAND ln -fs doc/html/index.html index.html
 )
 
+include_directories(thirdparty/json/include)
+
 find_package(SFML 2 COMPONENTS system window graphics REQUIRED)
 include_directories(${SFML_INCLUDE_DIR})
 list(APPEND LIBS ${SFML_LIBRARIES})
