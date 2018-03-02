@@ -6,6 +6,9 @@
 #include <SFML/Graphics.hpp>
 #include <nlohmann/json.hpp>
 
+std::ostream& operator<<(std::ostream& out, const sf::Event& event);
+#include "log.h"
+
 using json = nlohmann::json;
 
 using u8 = uint8_t;
@@ -19,7 +22,6 @@ using i64 = int64_t;
 
 using real = float;
 
-std::ostream& operator<<(std::ostream& out, const sf::Event& event);
 using Vector2r = sf::Vector2<real>;
 using RealRect = sf::Rect<real>;
 

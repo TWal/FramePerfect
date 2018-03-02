@@ -10,26 +10,7 @@
 using namespace std;
 
 int main() {
-    //win.create(sf::VideoMode(800, 600), "My window");
-
-    // Object obj;
-    // model.objects.push_back(&obj);
-    // controller.selectObject(&obj);
-    // while(win.isOpen()) {
-    //     sf::Event event;
-    //     while(win.pollEvent(event)) {
-    //         if(event.type == sf::Event::Closed) {
-    //             win.close();
-    //         }
-    //         //else if(!gui.handleEvent(event));
-    //         else eventManager.handleEvent(event);
-    //     }
-    //     win.clear(sf::Color::Black);
-    //     controller.step();
-    //     renderer.render();
-    //     // gui.draw();
-    //     win.display();
-    // }
+    lg::init();
 
     Game::start();
     while(true){

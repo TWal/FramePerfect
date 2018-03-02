@@ -6,3 +6,4 @@ bin/FramePerfect
 compile_commands.json
 doc/*
 index.html
+log
